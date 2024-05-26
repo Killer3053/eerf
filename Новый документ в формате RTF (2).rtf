@@ -1,0 +1,19 @@
+from flask import Flask
+import base64
+app = Flask(__name__)
+def decode_flag(encoded_flag):
+    flag = base64.b64decode(encoded_flag.encode()).decode()
+    return flag
+
+encoded_flag = "WW91cl9GbGFnX0hlcmUK"
+
+
+@app.route('/')
+def index():
+
+    decoded_flag = decode_flag(encoded_flag)
+  
+    return decoded_flag
+
+if __name__ == '__main__':
+    app.run(debug=True)
