@@ -5,12 +5,11 @@ def decode_flag(encoded_flag):
     flag = base64.b64decode(encoded_flag.encode()).decode()
     return flag
 
-encoded_flag = "WW91cl9GbGFnX0hlcmUK"
+encoded_flag = "ZmxhZ3tzaGVybG9rfQo="
 
 
 @app.route('/')
 def index():
-
     decoded_flag = decode_flag(encoded_flag)
   
     return decoded_flag
